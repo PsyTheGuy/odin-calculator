@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/subway-ticker');
+
 :root {
   /* colors */
   --background-color: radial-gradient(circle, rgba(21,129,194,1) 0%, rgba(18,81,119,1) 84%);
@@ -5,10 +7,11 @@
   --screen-color: rgb(224, 224, 224);
   --num-btn-color: rgb(96, 165, 255);
   --num-btn-active: rgb(81, 138, 212);
-  --operand-btn-color: rgb(231, 212, 34);
-  --operand-btn-active: rgb(185, 169, 24);
+  --operator-btn-color: rgb(231, 212, 34);
+  --operator-btn-active: rgb(185, 169, 24);
   --special-btn-color: rgb(150, 150, 150);
   --special-btn-active: rgb(120, 120, 120);
+  --font-color: rgb(0,0,0);
 }
 
 * {
@@ -48,14 +51,15 @@ body {
   border-radius: 5px;
   background-color: var(--screen-color);
   text-align: end;
+  font-family: 'Subway Ticker', sans-serif;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .button {
   border: 1px solid black;
   border-radius: 5px;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 20px;
   transition: 50ms;
   pointer-events: all;
@@ -63,6 +67,10 @@ body {
 
 .button:hover {
   box-shadow: 0 0 5px black;
+}
+
+.button[disabled] {
+  color: var(--font-color);
 }
 
 .number {
@@ -81,12 +89,12 @@ body {
   background-color: var(--special-btn-active);
 }
 
-.operand {
-  background-color: var(--operand-btn-color);
+.operator {
+  background-color: var(--operator-btn-color);
 }
 
-.operand:active {
-  background-color: var(--operand-btn-active);
+.operator:active {
+  background-color: var(--operator-btn-active);
 }
 
 .double {
